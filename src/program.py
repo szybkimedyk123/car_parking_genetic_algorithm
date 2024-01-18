@@ -3,13 +3,15 @@ import sys
 from algorithm import *
 from car import *
 from visualization import *
+from visualization2 import *
 from const import *
+from PyQt5.QtWidgets import QApplication
+from visualization2 import MyMainWindow
 
 
 
 # def start(algorith_parameters, options, parking=parking, target_position=target_position, parking_space=parking_space, state=state):
 def start(algorith_parameters=algorith_parameters, parking=parking, target_position=target_position, parking_space=parking_space, state=state):
-
 
     trajectory_x = []
     trajectory_y = []
@@ -28,11 +30,16 @@ def start(algorith_parameters=algorith_parameters, parking=parking, target_posit
     folder_name = 'data'
     data_name = 'performance.txt'
     car_name = 'simulation.txt'
-    file_path_data =  os.path.join(folder_name, data_name)
-    file_path_car = os.path.join(folder_name, car_name)
 
-    if not os.path.exists(folder_name):
-        os.makedirs(folder_name)
+    src_path = os.path.dirname(os.path.abspath(__file__))
+
+    data_path = os.path.abspath(os.path.join(src_path, '..', folder_name))
+
+    file_path_data = os.path.join(data_path, data_name)
+    file_path_car = os.path.join(data_path, car_name)
+
+    # if not os.path.exists(folder_name):
+    #     os.makedirs(folder_name)
 
     with open(file_path_data, 'w') as file:
 
@@ -78,6 +85,12 @@ def start(algorith_parameters=algorith_parameters, parking=parking, target_posit
     print("ocena = " + str(o))
 
     visualize_trajectory(state_trajectory, parking_space, parking, trajectory_x, trajectory_y)
+    # app = QApplication(sys.argv)
+    # mainWin = MyMainWindow(state_trajectory, parking_space, parking, trajectory_x, trajectory_y)
+    # sys.exit(app.exec_())
+
+    # return state_trajectory, parking_space, parking, trajectory_x, trajectory_y
+
 
 if __name__ == "__main__":
     start()
