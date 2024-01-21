@@ -4,7 +4,7 @@ import sys
 folder_name = os.path.abspath('gui')
 sys.path.append(folder_name)
 
-import gui
+import gui2 as gui
 
 
 if __name__ == "__main__":

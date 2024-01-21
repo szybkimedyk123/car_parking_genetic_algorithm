@@ -1,14 +1,14 @@
 import os
 import sys
-from algorithm import *
+from algorithm2 import *
 from car import *
 from visualization import *
 from const import *
 
 
 
-# def start(algorith_parameters, options, parking=parking, target_position=target_position, parking_space=parking_space, state=state):
-def start(algorith_parameters=algorith_parameters, parking=parking, target_position=target_position, parking_space=parking_space, state=state):
+def start(algorithm_parameters, options, parking=parking, target_position=target_position, parking_space=parking_space, state=state):
+#algorithm_parameters=algorithm_parameters, parking=parking, target_position=target_position, parking_space=parking_space, state=state):
 
 
     trajectory_x = []
@@ -16,7 +16,8 @@ def start(algorith_parameters=algorith_parameters, parking=parking, target_posit
     o_d = 0
 
     best_solution, history_alg = evolutionary_algorithm(
-        algorith_parameters=algorith_parameters,
+        algorith_parameters=algorithm_parameters,
+        options=options,
         target_position=target_position,
         parking_spot=parking_space,
         parking=parking,
@@ -71,11 +72,11 @@ def start(algorith_parameters=algorith_parameters, parking=parking, target_posit
 
     o = 0.5 * o_m + o_d + len(best_solution) / 10 + 0.5 * abs(90 - abs(np.degrees(angle)))
 
-    print("odległość = " + str(o_m))
-    print("droga = " + str(o_d))
-    print("czas = " + str(len(best_solution)))
-    print("kąt = " + str(90 - np.degrees(abs(angle))))
-    print("ocena = " + str(o))
+    print("distance from center = " + str(o_m))
+    print("distance = " + str(o_d))
+    print("time = " + str(len(best_solution)))
+    print("angle = " + str(90 - np.degrees(abs(angle))))
+    print("algorithm evaluation = " + str(o))
 
     visualize_trajectory(state_trajectory, parking_space, parking, trajectory_x, trajectory_y)
 
