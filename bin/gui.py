@@ -1,6 +1,7 @@
 import sys
 import os
-from PySide2.QtWidgets import *
+from PyQt5.QtWidgets import *
+
 
 current_dir = os.path.dirname(__file__)
 parent_dir = os.path.abspath(os.path.join(current_dir, os.pardir))
@@ -209,4 +210,4 @@ def main():
     sys.exit(app.exec_())
 
 if __name__ == "__main__":
-     main()
+    main()
