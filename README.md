@@ -47,7 +47,7 @@ u=[a, φ]
 
 **Algorithm evaluation** is based on:
 ```math
-O = 0.5 \cdot O_c \cdot O_d \cdot \frac{O_t}{10} \cdot 0.5 \cdot O_a + P
+O = 0.5 \cdot O_c + O_d + \frac{O_t}{10} + 0.5 \cdot O_a + P
 ```
 ```O: overall evaluation, O_d: distance, O_c: distance from the center of the parking space, O_t: time, O_a: vertical angle difference, P: penalty```
 
