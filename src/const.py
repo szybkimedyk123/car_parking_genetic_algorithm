@@ -2,7 +2,6 @@ import numpy as np
 
 #constants
 
-
 #car
 CAR_X = 0
 CAR_Y = 0

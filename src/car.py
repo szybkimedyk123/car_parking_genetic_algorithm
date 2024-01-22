@@ -4,13 +4,13 @@ from const import *
 
 def kinematic_model(z, u):
     x, y, delta, theta, v = z
-    a, d_delta = u
+    a, phi = u
 
     max_velocity = steering[1]
     max_angle = steering[2]
 
     v += a
-    delta += d_delta
+    delta += phi
 
     v_dot = np.clip(v, -max_velocity, max_velocity)
     delta = np.clip(delta, -max_angle, max_angle)

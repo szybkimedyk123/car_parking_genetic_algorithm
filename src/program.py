@@ -1,6 +1,6 @@
 import os
 import sys
-from algorithm2 import *
+from algorithm import *
 from car import *
 from visualization import *
 from const import *
@@ -8,8 +8,6 @@ from const import *
 
 
 def start(algorithm_parameters, options, parking=parking, target_position=target_position, parking_space=parking_space, state=state):
-#algorithm_parameters=algorithm_parameters, parking=parking, target_position=target_position, parking_space=parking_space, state=state):
-
 
     trajectory_x = []
     trajectory_y = []
