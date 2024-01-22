@@ -25,7 +25,7 @@ Algorithm evaluation chart displays Final Evaluation Value and individual assess
 \begin{cases}
 \dot{x} = v \cdot \cos(\psi + \beta) \
 \dot{y} = v \cdot \sin(\psi + \beta) \
-\cot{\delta} = \delta
+\cot{\delta} = \delta \
 \dot{\theta} = \frac{v \cdot \tan(\delta) \cdot \cos(\beta)}{L} \
 \dot{v} = a \
 \beta = \arctan\left(\frac{l_r \cdot \tan(\delta)}{L}\right)
