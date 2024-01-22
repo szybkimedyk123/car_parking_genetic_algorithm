@@ -4,6 +4,17 @@ from matplotlib.animation import FuncAnimation
 from matplotlib.patches import Ellipse
 from car import *
 from const import *
+import os
+import sys
+
+current_dir = os.path.dirname(__file__)
+parent_dir = os.path.abspath(os.path.join(current_dir, os.pardir))
+
+src_dir = os.path.join(parent_dir, 'gui')
+
+sys.path.append(src_dir)
+
+import gui2
 
 
 
@@ -85,3 +96,5 @@ def visualize_trajectory(state_trajectory, parking_spot, parking, trajectory_x, 
                         blit=True, interval=100, repeat=False)
 
     plt.show()
+
+    gui2.start()
